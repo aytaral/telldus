@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E05CB332-6289-48EE-B725-FB0B3ABCAC6E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DataLogger\TelldusDataLogger.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Viewer\Telldus.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TelldusDataLogger">
+        <MSBuild Projects="DataLogger\TelldusDataLogger.dproj"/>
+    </Target>
+    <Target Name="TelldusDataLogger:Clean">
+        <MSBuild Projects="DataLogger\TelldusDataLogger.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TelldusDataLogger:Make">
+        <MSBuild Projects="DataLogger\TelldusDataLogger.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Telldus">
+        <MSBuild Projects="Viewer\Telldus.dproj"/>
+    </Target>
+    <Target Name="Telldus:Clean">
+        <MSBuild Projects="Viewer\Telldus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Telldus:Make">
+        <MSBuild Projects="Viewer\Telldus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TelldusDataLogger;Telldus"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TelldusDataLogger:Clean;Telldus:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TelldusDataLogger:Make;Telldus:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

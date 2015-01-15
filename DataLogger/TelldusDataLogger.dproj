@@ -1,0 +1,156 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{73B0FB98-DEB0-4BE8-9071-CD6719C5BCA3}</ProjectGuid>
+        <ProjectVersion>15.4</ProjectVersion>
+        <FrameworkType>FMX</FrameworkType>
+        <MainSource>TelldusDataLogger.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Base)'=='true') or '$(Base_OSX32)'!=''">
+        <Base_OSX32>true</Base_OSX32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
+        <SanitizedProjectName>TelldusDataLogger</SanitizedProjectName>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX32)'!=''">
+        <DCC_UsePackage>FireDACPgDriver;DBXInterBaseDriver;DataSnapServer;DataSnapCommon;DbxCommonDriver;dbxcds;CustomIPTransport;dsnap;IndyIPServer;IndyCore;CloudService;FmxTeeUI;FireDACIBDriver;dsnapxml;FireDACDb2Driver;bindcompfmx;FireDACODBCDriver;RESTBackendComponents;dbrtl;FireDACCommon;bindcomp;inetdb;xmlrtl;FireDACCommonDriver;bindengine;soaprtl;FMXTee;FireDACMSSQLDriver;DBXInformixDriver;DataSnapServerMidas;DBXFirebirdDriver;inet;FireDACMySQLDriver;soapmidas;DBXSybaseASADriver;RESTComponents;dbexpress;IndyIPClient;FireDACSqliteDriver;FireDACDSDriver;DBXSqliteDriver;fmx;IndySystem;tethering;DataSnapClient;DataSnapProviderClient;fmxFireDAC;DBXOracleDriver;fmxase;IndyIPCommon;DataSnapFireDAC;FireDACDBXDriver;soapserver;inetdbxpress;FireDACInfxDriver;FireDACASADriver;rtl;DbxClientDriver;DataSnapNativeClient;IndyProtocols;DBXMySQLDriver;bindcompdbx;FireDACADSDriver;FireDAC;fmxobj;FireDACOracleDriver;fmxdae;FireDACMSAccDriver;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_UsePackage>cxSchedulerTreeBrowserRS20;frxADO20;frxe20;tb2k_dXE6;dxSkinOffice2007SilverRS20;cxGridRS20;dxFireDACServerModeRS20;dxPSdxLCLnkRS20;JvGlobus;dxPScxExtCommonRS20;JvManagedThreads;csLib4_R_XE6;JvMM;cxPageControlRS20;FireDACPgDriver;TGlobe5_XE6;JvCrypt;DBXInterBaseDriver;DataSnapServer;DataSnapCommon;JvNet;dxSkinsdxBarPainterRS20;dxSkinSharpRS20;JvDotNetCtrls;DbxCommonDriver;dxLayoutControlRS20;vclimg;dxSkinSilverRS20;dxSkinsdxNavBarPainterRS20;dbxcds;DatasnapConnectorsFreePascal;JvXPCtrls;dxPSCoreRS20;dxSkinOffice2013LightGrayRS20;vcldb;dxPSTeeChartRS20;dxSkinOffice2013WhiteRS20;dxSkinMcSkinRS20;CustomIPTransport;dsnap;IndyIPServer;dxSkinCoffeeRS20;dxSkinGlassOceansRS20;IndyCore;dxSkinOffice2010SilverRS20;dxComnRS20;CloudService;dxSkinOffice2013DarkGrayRS20;dxFlowChartRS20;FmxTeeUI;FireDACIBDriver;dxDBXServerModeRS20;dxSkinOffice2007PinkRS20;dxSkinSpringTimeRS20;cxTreeListdxBarPopupMenuRS20;tbx_dXE6;dxPsPrVwAdvRS20;JvDB;dxSkiniMaginaryRS20;dxPScxGridLnkRS20;JvRuntimeDesign;dxSkinDevExpressDarkStyleRS20;cxSchedulerGridRS20;dxtrmdRS20;dsnapxml;JclDeveloperTools;FireDACDb2Driver;dxSkinMoneyTwinsRS20;dxSkinOffice2007GreenRS20;dxPScxTLLnkRS20;cxPivotGridOLAPRS20;dxPSdxFCLnkRS20;bindcompfmx;cxPageControldxBarPopupMenuRS20;frx20;vcldbx;FireDACODBCDriver;RESTBackendComponents;dbrtl;FireDACCommon;bindcomp;inetdb;JvPluginSystem;DBXOdbcDriver;JvCmp;vclFireDAC;cxSpreadSheetRS20;xmlrtl;JvTimeFramework;dxSkinOffice2007BlackRS20;dxPScxSSLnkRS20;FireDACCommonDriver;bindengine;vclactnband;soaprtl;FMXTee;dxGDIPlusRS20;bindcompvcl;Jcl;vclie;cxVerticalGridRS20;cxSchedulerRS20;dxSkinBlackRS20;FireDACMSSQLDriver;DBXInformixDriver;dxSkinSummer2008RS20;Intraweb;cxBarEditItemRS20;DataSnapServerMidas;dsnapcon;DBXFirebirdDriver;inet;dxBarRS20;cxDataRS20;dxSkinDarkSideRS20;JvPascalInterpreter;FireDACMySQLDriver;soapmidas;vclx;dxPScxVGridLnkRS20;dxSkinLondonLiquidSkyRS20;dxCoreRS20;DBXSybaseASADriver;RESTComponents;dxPSPrVwRibbonRS20;dbexpress;dxPSLnksRS20;IndyIPClient;JvBDE;dxSpellCheckerRS20;dxBarExtItemsRS20;dxdbtrRS20;FireDACSqliteDriver;FireDACDSDriver;cxSchedulerRibbonStyleEventEditorRS20;DBXSqliteDriver;fmx;dxSkinVS2010RS20;dxPScxPCProdRS20;IndySystem;dxSkinXmas2008BlueRS20;TeeDB;tethering;JvDlgs;inetdbbde;dxTabbedMDIRS20;DataSnapClient;dxmdsRS20;DataSnapProviderClient;DBXSybaseASEDriver;dxdborRS20;dxPSdxDBTVLnkRS20;fsBDE20;MetropolisUILiveTile;dxSkinCaramelRS20;dxPScxSchedulerLnkRS20;dxSkinLiquidSkyRS20;csLib4_Frames_XE6;vcldsnap;dxSkinDevExpressStyleRS20;fmxFireDAC;cxPivotGridChartRS20;DBXDb2Driver;DBXOracleDriver;dxSkinOffice2010BlueRS20;JvCore;dcldxSkinsCoreRS20;vclribbon;cxExportRS20;dxServerModeRS20;dxSkinscxSchedulerPainterRS20;dxSkinMetropolisDarkRS20;fmxase;vcl;DBXMSSQLDriver;IndyIPCommon;CodeSiteExpressPkg;dxSkinBlueRS20;dxSkinOffice2010BlackRS20;DataSnapFireDAC;FireDACDBXDriver;dxBarExtDBItemsRS20;dxSkinsdxDLPainterRS20;soapserver;dxPSDBTeeChartRS20;JvAppFrm;inetdbxpress;dxADOServerModeRS20;dxSkinBlueprintRS20;dxSkinFoggyRS20;dxSkinSharpPlusRS20;fsTee20;FireDACInfxDriver;frxTee20;cxPivotGridRS20;JvDocking;adortl;frxDB20;JvWizards;dxRibbonRS20;FireDACASADriver;dxSkinHighContrastRS20;JvHMI;dxSkinTheAsphaltWorldRS20;fsADO20;JvBands;dxBarDBNavRS20;dxSkinscxPCPainterRS20;rtl;DbxClientDriver;dxSkinMetropolisRS20;dxNavBarRS20;dxDockingRS20;Tee;dxSkinOffice2007BlueRS20;JclContainers;dxSkinsdxRibbonPainterRS20;frxDBX20;dxSkinValentineRS20;JvSystem;DataSnapNativeClient;svnui;JvControls;IndyProtocols;DBXMySQLDriver;dxSkinSevenClassicRS20;dxPScxCommonRS20;frxBDE20;dxSkinPumpkinRS20;bindcompdbx;TeeUI;JvJans;JvPrintPreview;JvPageComps;JvStdCtrls;JvCustom;dxSkinDarkRoomRS20;FireDACADSDriver;vcltouch;dxSkinStardustRS20;cxEditorsRS20;dxorgcRS20;dxPSdxDBOCLnkRS20;VclSmp;FireDAC;VCLRESTComponents;dxSkinsCoreRS20;DataSnapConnectors;dxSkinSevenRS20;fsDB20;cxLibraryRS20;fmxobj;JclVcl;DropMasterVcl;fs20;svn;dxWizardControlRS20;dxSkinLilianRS20;FireDACOracleDriver;fmxdae;dxSkinWhiteprintRS20;dxPScxPivotGridLnkRS20;bdertl;dxThemeRS20;dxPSdxOCLnkRS20;cxTreeListRS20;dxTileControlRS20;FireDACMSAccDriver;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>cxSchedulerTreeBrowserRS20;dxSkinOffice2007SilverRS20;cxGridRS20;dxFireDACServerModeRS20;dxPSdxLCLnkRS20;dxPScxExtCommonRS20;cxPageControlRS20;FireDACPgDriver;DBXInterBaseDriver;DataSnapServer;DataSnapCommon;dxSkinsdxBarPainterRS20;dxSkinSharpRS20;DbxCommonDriver;dxLayoutControlRS20;vclimg;dxSkinSilverRS20;dxSkinsdxNavBarPainterRS20;dbxcds;DatasnapConnectorsFreePascal;dxPSCoreRS20;dxSkinOffice2013LightGrayRS20;vcldb;dxPSTeeChartRS20;dxSkinOffice2013WhiteRS20;dxSkinMcSkinRS20;CustomIPTransport;dsnap;IndyIPServer;dxSkinCoffeeRS20;dxSkinGlassOceansRS20;IndyCore;dxSkinOffice2010SilverRS20;dxComnRS20;CloudService;dxSkinOffice2013DarkGrayRS20;dxFlowChartRS20;FmxTeeUI;FireDACIBDriver;dxDBXServerModeRS20;dxSkinOffice2007PinkRS20;dxSkinSpringTimeRS20;cxTreeListdxBarPopupMenuRS20;dxPsPrVwAdvRS20;dxSkiniMaginaryRS20;dxPScxGridLnkRS20;dxSkinDevExpressDarkStyleRS20;cxSchedulerGridRS20;dxtrmdRS20;dsnapxml;FireDACDb2Driver;dxSkinMoneyTwinsRS20;dxSkinOffice2007GreenRS20;dxPScxTLLnkRS20;cxPivotGridOLAPRS20;dxPSdxFCLnkRS20;bindcompfmx;cxPageControldxBarPopupMenuRS20;FireDACODBCDriver;RESTBackendComponents;dbrtl;FireDACCommon;bindcomp;inetdb;DBXOdbcDriver;vclFireDAC;cxSpreadSheetRS20;xmlrtl;dxSkinOffice2007BlackRS20;dxPScxSSLnkRS20;FireDACCommonDriver;bindengine;vclactnband;soaprtl;FMXTee;dxGDIPlusRS20;bindcompvcl;vclie;cxVerticalGridRS20;cxSchedulerRS20;dxSkinBlackRS20;FireDACMSSQLDriver;DBXInformixDriver;dxSkinSummer2008RS20;Intraweb;cxBarEditItemRS20;DataSnapServerMidas;dsnapcon;DBXFirebirdDriver;inet;dxBarRS20;cxDataRS20;dxSkinDarkSideRS20;FireDACMySQLDriver;soapmidas;vclx;dxPScxVGridLnkRS20;dxSkinLondonLiquidSkyRS20;dxCoreRS20;DBXSybaseASADriver;RESTComponents;dxPSPrVwRibbonRS20;dbexpress;dxPSLnksRS20;IndyIPClient;dxSpellCheckerRS20;dxBarExtItemsRS20;dxdbtrRS20;FireDACSqliteDriver;FireDACDSDriver;cxSchedulerRibbonStyleEventEditorRS20;DBXSqliteDriver;fmx;dxSkinVS2010RS20;dxPScxPCProdRS20;IndySystem;dxSkinXmas2008BlueRS20;TeeDB;tethering;dxTabbedMDIRS20;DataSnapClient;dxmdsRS20;DataSnapProviderClient;DBXSybaseASEDriver;dxdborRS20;dxPSdxDBTVLnkRS20;MetropolisUILiveTile;dxSkinCaramelRS20;dxPScxSchedulerLnkRS20;dxSkinLiquidSkyRS20;vcldsnap;dxSkinDevExpressStyleRS20;fmxFireDAC;cxPivotGridChartRS20;DBXDb2Driver;DBXOracleDriver;dxSkinOffice2010BlueRS20;dcldxSkinsCoreRS20;vclribbon;cxExportRS20;dxServerModeRS20;dxSkinscxSchedulerPainterRS20;dxSkinMetropolisDarkRS20;fmxase;vcl;DBXMSSQLDriver;IndyIPCommon;dxSkinBlueRS20;dxSkinOffice2010BlackRS20;DataSnapFireDAC;FireDACDBXDriver;dxBarExtDBItemsRS20;dxSkinsdxDLPainterRS20;soapserver;dxPSDBTeeChartRS20;inetdbxpress;dxADOServerModeRS20;dxSkinBlueprintRS20;dxSkinFoggyRS20;dxSkinSharpPlusRS20;FireDACInfxDriver;cxPivotGridRS20;adortl;dxRibbonRS20;FireDACASADriver;dxSkinHighContrastRS20;dxSkinTheAsphaltWorldRS20;dxBarDBNavRS20;dxSkinscxPCPainterRS20;rtl;DbxClientDriver;dxSkinMetropolisRS20;dxNavBarRS20;dxDockingRS20;Tee;dxSkinOffice2007BlueRS20;dxSkinsdxRibbonPainterRS20;dxSkinValentineRS20;DataSnapNativeClient;IndyProtocols;DBXMySQLDriver;dxSkinSevenClassicRS20;dxPScxCommonRS20;dxSkinPumpkinRS20;bindcompdbx;TeeUI;dxSkinDarkRoomRS20;FireDACADSDriver;vcltouch;dxSkinStardustRS20;cxEditorsRS20;dxorgcRS20;dxPSdxDBOCLnkRS20;VclSmp;FireDAC;VCLRESTComponents;dxSkinsCoreRS20;DataSnapConnectors;dxSkinSevenRS20;cxLibraryRS20;fmxobj;dxWizardControlRS20;dxSkinLilianRS20;FireDACOracleDriver;fmxdae;dxSkinWhiteprintRS20;dxPScxPivotGridLnkRS20;dxThemeRS20;dxPSdxOCLnkRS20;cxTreeListRS20;dxTileControlRS20;FireDACMSAccDriver;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="tdMain.pas">
+            <Form>frmTelldus</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="tdData.pas">
+            <Form>dmData</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="tdTelldus.pas"/>
+        <DCCReference Include="tdSettings.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">TelldusDataLogger.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k200.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="D:\XE6\Lib\FastReport 5\LibD20\dclfsibx20.bpl">FastScript 1.9 IBX Components</Excluded_Packages>
+                    <Excluded_Packages Name="D:\XE6\Lib\FastReport 5\LibD20\dclfrxibx20.bpl">FastReport 5.0 IBX Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

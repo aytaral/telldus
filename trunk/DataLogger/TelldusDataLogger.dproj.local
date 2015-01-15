@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.378,D:\XE6\FM_Telldus\tdMain.pas=D:\XE6\FM_Telldus\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.280,D:\XE6\FM_Telldus\Unit2.dfm=D:\XE6\FM_Telldus\tdData.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.474,D:\XE6\FM_Telldus\TelldusDataLogger.dproj=D:\XE6\FM_Telldus\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.231,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\XE6\FM_Telldus\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.335,C:\Users\BjornLa\Documents\Embarcadero\Studio\Projects\Unit1.fmx=D:\XE6\FM_Telldus\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.378,D:\XE6\FM_Telldus\tdMain.fmx=D:\XE6\FM_Telldus\Unit1.fmx</Transaction>
+  </Transactions>
+</BorlandProject>

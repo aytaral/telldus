@@ -22,7 +22,7 @@ type
   end;
 
   TSettingsHandler = class(TObject)
-  published
+  public
     class function LoadFromFile(Path: String = ''): TSettings;
     class procedure SaveToFile(Settings: TSettings; Path: String = '');
   end;
